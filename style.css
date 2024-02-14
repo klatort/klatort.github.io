@@ -1,4 +1,4 @@
-@import url('https://fonts.cdnfonts.com/css/cooper-black');
+@import url("https://fonts.cdnfonts.com/css/cooper-black");
 
 .container {
   width: 100%;
@@ -12,18 +12,19 @@
   height: 100vh;
 }
 
-.heading{
-    font-family: 'Cooper Black';
-    font-size: 2em;
-    color: #4cb4f0;
+.heading {
+  font-family: "Cooper Black";
+  font-size: 2em;
+  color: #4cb4f0;
 }
 
 body {
   margin: 0;
-  padding: 0;                                                                    
-  font-family: 'Cooper Black';                                
-  background-color: #d1ebf6;
+  padding: 0;
+  font-family: "Cooper Black";
   font-size: 10px;
+  background: rgb(209,235,246);
+  background: linear-gradient(0deg, rgba(209,235,246,1) 32%, rgba(176,218,236,1) 93%);
 }
 
 button {
@@ -35,7 +36,7 @@ button {
   border-radius: 100px;
   background-color: #4cb4f0;
   color: white;
-  font-family: 'Cooper Black';
+  font-family: "Cooper Black";
   font-size: 1.5em;
   cursor: pointer;
 }
