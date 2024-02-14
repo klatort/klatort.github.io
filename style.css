@@ -14,7 +14,7 @@
 
 .heading{
     font-family: 'Cooper Black';
-    font-size: 32px;
+    font-size: 2em;
     color: #4cb4f0;
 }
 
@@ -23,7 +23,7 @@ body {
   padding: 0;                                                                    
   font-family: 'Cooper Black';                                
   background-color: #d1ebf6;
-  font-size: 16px;
+  font-size: 10px;
 }
 
 button {
@@ -36,7 +36,7 @@ button {
   background-color: #4cb4f0;
   color: white;
   font-family: 'Cooper Black';
-  font-size: 24px;
+  font-size: 1.5em;
   cursor: pointer;
 }
 
