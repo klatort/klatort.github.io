@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head></head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="cinnamon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Serías mi San Valentín?</title>
+  </head>
+  <body>
+    <div class="container">
+      <div style="text-align: center">
+        <span class="heading">
+          <span style="color: #f6d4e3; letter-spacing: -0.2em">¿</span>
+          <span style="color: #fefbba; letter-spacing: -0.2em">S</span>
+          <span style="color: #4cb4f0; letter-spacing: -0.2em">e</span>
+          <span style="color: #f6d4e3; letter-spacing: -0.2em">r</span>
+          <span style="color: #fefbba; letter-spacing: -0.2em">i</span>
+          <span style="color: #4cb4f0; letter-spacing: -0.2em">a</span>
+          <span style="color: #f6d4e3; letter-spacing: -0.05em">s&nbsp;</span>
+          <span style="color: #fefbba; letter-spacing: -0.2em">m</span>
+          <span style="color: #4cb4f0; letter-spacing: -0.05em">i&nbsp;</span>
+          <span style="color: #f6d4e3; letter-spacing: -0.2em">S</span>
+          <span style="color: #fefbba; letter-spacing: -0.2em">a</span>
+          <span style="color: #4cb4f0; letter-spacing: -0.05em">n&nbsp;</span>
+          <span style="color: #f6d4e3; letter-spacing: -0.2em">V</span>
+          <span style="color: #fefbba; letter-spacing: -0.2em">a</span>
+          <span style="color: #4cb4f0; letter-spacing: -0.2em">l</span>
+          <span style="color: #f6d4e3; letter-spacing: -0.2em">e</span>
+          <span style="color: #fefbba; letter-spacing: -0.2em">n</span>
+          <span style="color: #4cb4f0; letter-spacing: -0.2em">t</span>
+          <span style="color: #f6d4e3; letter-spacing: -0.2em">i</span>
+          <span style="color: #fefbba; letter-spacing: -0.2em">n</span>
+          <span style="color: #4cb4f0; letter-spacing: -0.2em">?</span>
+        </span>
+      </div>
+      <div>
+        <img
+          class="hearts"
+          src="small_hearts.gif"
+          width="225"
+          style="
+            display: none;
+            filter: invert(45%) sepia(19%) saturate(890%) hue-rotate(304deg)
+              brightness(99%) contrast(115%);
+          "
+        />
+        <img id="cinnamon" src="cinnamon_cupid.png" height="315" />
+        <img
+          class="hearts"
+          src="small_hearts.gif"
+          width="225"
+          style="
+            display: none;
+            transform: scaleX(-1);
+            filter: invert(45%) sepia(19%) saturate(890%) hue-rotate(304deg)
+              brightness(99%) contrast(115%);
+          "
+        />
+      </div>
+      <div style="flex-grow: row">
+        <button id="si">Si</button>
+        <button id="no">No</button>
+      </div>
+    </div>
+    <script>
+      let counter = 0;
+      document.getElementById("si").addEventListener("click", () => {
+        const image = document.getElementById("cinnamon");
+        const button = document.getElementById("no");
+        button.style.backgroundColor = "#666666";
+        button.style.color = "#cccccc";
+        button.toggleAttribute("disabled");
+        image.style.transition = "opacity 0.5s";
+        image.style.opacity = "0";
+        setTimeout(() => {
+          image.src = "cinnamon_hearts.gif";
+          image.style.opacity = "1";
+          document.querySelectorAll(".hearts").forEach((heart) => {
+            heart.style.display = "inline-flex";
+          });
+        }, 200);
+      });
+
+      document.getElementById("no").addEventListener("click", () => {
+        counter++;
+        if (counter >= 10) {
+          const button = document.getElementById("no");
+          button.style.backgroundColor = "#666666";
+          button.style.color = "#cccccc";
+          button.toggleAttribute("disabled");
+
+          const image = document.getElementById("cinnamon");
+          image.style.transition = "opacity 0.5s";
+          image.style.opacity = "0";
+          setTimeout(() => {
+            image.src = "cinnamon_cry.gif";
+            image.style.opacity = "1";
+          }, 200);
+        } else {
+          const randomSadFace = ["😢", "😭", "😞", "😔", "🙁"];
+          const randomIndex = Math.floor(Math.random() * randomSadFace.length);
+          alert(randomSadFace[randomIndex]);
+
+          const button = document.getElementById("no");
+          const screenWidth = window.innerWidth;
+          const screenHeight = window.innerHeight;
+          const buttonWidth = button.offsetWidth;
+          const buttonHeight = button.offsetHeight;
+          const randomX = Math.floor(
+            Math.random() * (screenWidth - 2 * buttonWidth)
+          );
+          const randomY = Math.floor(
+            Math.random() * (screenHeight - 2 * buttonHeight)
+          );
+          button.style.position = "absolute";
+          button.style.left = randomX + "px";
+          button.style.top = randomY + "px";
+        }
+      });
+    </script>
+  </body>
+</html>
