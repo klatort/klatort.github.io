@@ -9,6 +9,7 @@
     <title>Serías mi San Valentín?</title>
   </head>
   <body>
+    <a id="secretito">LINK SECRETO</a>
     <div class="container">
       <div style="text-align: center">
         <span class="heading">
@@ -81,6 +82,10 @@
             heart.style.display = "inline-flex";
           });
         }, 200);
+      });
+
+      document.getElementById("secretito").addEventListener("click", () => {
+        alert("Ingresa por ssh a este ip: 110.238.68.153, la contraseña es una fecha especial uwu");
       });
 
       document.getElementById("no").addEventListener("click", () => {
